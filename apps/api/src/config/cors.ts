@@ -11,7 +11,7 @@ export const corsOptionsDelegate: Parameters<INestApplication['enableCors']>[0] 
   };
 
   const host = (req.headers as any)?.host || '';
-
+    corsOptions.origin.push('https://novu.play.nizek.shop');
   if (['test', 'local'].includes(process.env.NODE_ENV) || isWidgetRoute(req.url) || isBlueprintRoute(req.url)) {
     corsOptions.origin = '*';
   } else {
